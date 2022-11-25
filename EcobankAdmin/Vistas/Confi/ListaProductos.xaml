@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcobankAdmin.Vistas.Confi.ListaProductos"
+             NavigationPage.HasNavigationBar="False">
+    <Grid>
+
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0,1">
+                <GradientStop x:Name="Gra1" Color="#D6F4E7"
+                                                  
+                          Offset="0.1" />
+                <GradientStop x:Name="Gra2" Color="#11ffbd"
+                          Offset="1.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <ImageButton Source="flecha.png" HorizontalOptions="Start"
+               VerticalOptions="Start"
+               HeightRequest="30"
+               Margin="10,35,0,0"
+               BackgroundColor="Transparent"
+                     Command="{Binding Volvercommand}"/>
+        <Grid RowDefinitions="50,*" Margin="10,90,10,0">
+            <Button Text="Agregar" HorizontalOptions="Start" 
+                    CornerRadius="15"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    Command="{Binding Agregarcommand}"/>
+            <CollectionView Grid.Row="1" Margin="0,20,0,0"
+                ItemsSource="{Binding ListProductos}"
+                            x:Name="ListaProducto">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Span="1"
+                                     Orientation="Vertical"
+                                     VerticalItemSpacing="15"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                        <SwipeView >
+                            <SwipeView.RightItems
+                               >
+                                <SwipeItems Mode="Reveal">
+                                    <SwipeItem Text="EliminarPRU" 
+                                                Command="{Binding Source={x:Reference ListaProducto}, Path=BindingContext.Eliminarcommand}"
+                                               CommandParameter="{Binding .}"
+                                                IsVisible="{Binding VisibleElimEdit}"/>
+                                    <SwipeItem Text="EditarPRU"
+                                               IsVisible="{Binding VisibleElimEdit}"
+                                               Command="{Binding Source={x:Reference ListaProducto}, Path=BindingContext.Editarcommand}"
+                                               CommandParameter="{Binding .}"/>
+                                    <SwipeItem Text="Activar"
+                                               IsVisible="{Binding VisibleEstado}"
+                                               Command="{Binding Source={x:Reference ListaProducto}, Path=BindingContext.Activarcommand}"
+                                               CommandParameter="{Binding .}"/>
+
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+
+                            <Frame CornerRadius="15"
+                                   BackgroundColor="White"
+                                   HasShadow="False"
+                                   Padding="10">
+                                <StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image Source="{Binding Icono}"
+                                               WidthRequest="30"
+                                               />
+                                        <StackLayout>
+                                              <Label Text="{Binding Descripcion}"
+                                   FontSize="20"/>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding Preciocompra}"
+                                    FontSize="15"
+                                                     TextColor="#31312C"
+                                                       FontAttributes="Bold"/>
+                                                
+                                                <Label Text="{Binding Precioventa}"
+                                    FontSize="15" TextColor="#29CE69"
+                                                       FontAttributes="Bold"/>
+                                               
+                                            </StackLayout>
+                                            
+                                            
+                                        </StackLayout>
+                                      
+                                       
+                                        <Frame Padding="5" CornerRadius="10"
+                                       BackgroundColor="{Binding Color}"
+                                       HorizontalOptions="EndAndExpand"
+                                       HasShadow="False"
+                                               
+                                               VerticalOptions="Center">
+                                            <Label Text="{Binding Estado}"
+                                    FontSize="15"
+                                            FontAttributes="Bold"
+                                            TextColor="{Binding Colorletraestado}"
+                                  VerticalOptions="Center" 
+                                                   />
+                                        </Frame>
+
+                                    </StackLayout>
+                                 
+                                </StackLayout>
+                            </Frame>
+
+                        </SwipeView>
+
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </Grid>
+</ContentPage>

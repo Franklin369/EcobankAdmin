@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcobankAdmin.Vistas.Compras.RelativeLayaPractica">
+    <ContentPage.Content>
+        <RelativeLayout>
+        
+
+        <BoxView x:Name="box1"
+                BackgroundColor="Red"
+                RelativeLayout.HeightConstraint="100"
+                RelativeLayout.WidthConstraint="100"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Constant=-100}"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Constant=-100}">
+                
+            </BoxView>
+            <BoxView
+                BackgroundColor="Blue"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView,ElementName=box1,Property=Height,Factor=0.33}"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToView,ElementName=box1,Property=Width,Factor=0.33}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,ElementName=box1,Property=X}"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView,ElementName=box1,Property=Y}">
+
+            </BoxView>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

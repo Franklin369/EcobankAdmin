@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:degradado="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="EcobankAdmin.Vistas.Menuprincipal"
+             xmlns:sombras="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+             xmlns:sk="clr-namespace:Xamarin.Forms.Skeleton;assembly=Xamarin.Forms.Skeleton"
+             NavigationPage.HasNavigationBar="False">
+    
+    <ScrollView Orientation="Vertical">
+          <Grid RowDefinitions="295,130,40,*" BackgroundColor="#E9EDF3">
+        <sombras:Shadows CornerRadius="10" Grid.Row="0"
+            Shades="{sombras:SingleShade Offset='0, 15',
+                                    Opacity=0.1,
+                                    Color=Gray}">
+            <degradado:PancakeView CornerRadius="0,0,30,30"
+                              BackgroundColor="White"
+            BackgroundGradientStartPoint="0.9,0.1" BackgroundGradientEndPoint="0.1,1">
+
+                <sombras:Shadows CornerRadius="60"  
+            Shades="{sombras:SingleShade Offset='0, 10',
+                                    Opacity=0.5,
+                                    Color=#11ffbd}">
+                    <Frame Margin="15,30,15,30"
+                   CornerRadius="15" HasShadow="False">
+                        <Frame.Background>
+                            <LinearGradientBrush EndPoint="1,0">
+                                    <GradientStop x:Name="Gra1" Color="#11ffbd"
+                                                  
+                          Offset="0.1" /> 
+                                    <GradientStop x:Name="Gra2" Color="#D6F4E7"
+                          Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Frame.Background>
+                            <StackLayout>
+                                <Label Text="Administrador"
+                                       FontAttributes="Bold"
+                                       FontSize="25"
+                                       HorizontalTextAlignment="Center"
+                                       TextColor="#09553E"
+                                       VerticalTextAlignment="Center"/>
+                                <Grid ColumnDefinitions="*,*">
+                                    <StackLayout VerticalOptions="Center">
+                                        <Image Source="https://i.ibb.co/4Pn6c2W/patron.png"
+                                               HeightRequest="30"
+                                               HorizontalOptions="Start"/>
+                                        <StackLayout Orientation="Horizontal">
+                                             <Label Text="Eco"
+                                               CharacterSpacing="10"
+                                               FontAttributes="Bold"
+                                               FontSize="18"
+                                                    VerticalOptions="Center"/>
+                                            <Button Text="BANK"
+                                                    BackgroundColor="#D0F2D8"
+                                                    TextColor="#29CE69"
+                                                    CornerRadius="15"
+                                                    FontAttributes="Bold"
+                                                    FontSize="20"/>
+                                        </StackLayout>
+                                       
+                                     
+
+
+                                      
+                                        <StackLayout Orientation="Horizontal">
+                                        
+                                            
+                                        </StackLayout>
+                                       
+                                    </StackLayout>
+                                    <Image  Grid.Column="1"
+                                        Source="https://i.ibb.co/3B8LW6z/luz.png"
+                                            HorizontalOptions="EndAndExpand"
+                                            Margin="0,10,0,0"/>
+                                </Grid>
+                              
+                            </StackLayout>
+
+                    </Frame>
+                </sombras:Shadows>
+            </degradado:PancakeView>
+        </sombras:Shadows>
+        <sombras:Shadows CornerRadius="10" Grid.Row="1" 
+            Shades="{sombras:SingleShade Offset='0, 15',
+                                    Opacity=0.1,
+                                    Color=Gray}">
+            <Frame  CornerRadius="20" Padding="10"
+                Margin="15,15,15,0" HasShadow="False">
+                <Grid ColumnDefinitions="*,*,*" VerticalOptions="Center">
+                    <StackLayout >
+                        <Frame HasShadow="False"
+                        Padding="0" CornerRadius="25"
+                           BackgroundColor="#EEF1FD"
+                          HorizontalOptions="Center">
+                            <Image Source="https://i.ibb.co/LYW4wHb/carisma.png"
+                           HeightRequest="35"
+                                Margin="10"
+                                BackgroundColor="Transparent"
+                                    />
+                        </Frame>
+
+                        <Label Text="CONFIGURAR"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           TextColor="Black"
+                           FontSize="12"
+                           FontAttributes="Bold"
+                           CharacterSpacing="2"/>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding NavegarMenuconfigcommad}"/>
+                            </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1">
+                        <Frame HasShadow="False"
+                        Padding="0" CornerRadius="25"
+                           BackgroundColor="#FFF3EB"
+                          HorizontalOptions="Center">
+                            <ImageButton Source="https://i.ibb.co/m4zYGBw/flujo-de-dinero.png"
+                           HeightRequest="50"
+                                HorizontalOptions="Center"
+                                BackgroundColor="Transparent"
+                                      Padding="10"/>
+                        </Frame>
+
+                        <Label Text="REPORTES"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           TextColor="Black"
+                           FontSize="12"
+                           FontAttributes="Bold"
+                           CharacterSpacing="2"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="2">
+                        <Frame HasShadow="False"
+                        Padding="0" CornerRadius="25"
+                           BackgroundColor="#EBFAF9"
+                          HorizontalOptions="Center">
+                            <ImageButton Source="https://i.ibb.co/1LRYYLy/punto-de-encuentro.png"
+                           HeightRequest="50"
+                                HorizontalOptions="Center"
+                                BackgroundColor="Transparent"
+                                      Padding="8"/>
+                        </Frame>
+
+                        <Label Text="ASIGNACIONES"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           TextColor="Black"
+                           FontSize="12"
+                           FontAttributes="Bold"
+                           CharacterSpacing="2"
+                               />
+                    </StackLayout>
+                </Grid>
+
+            </Frame>
+        </sombras:Shadows>
+        <Label Grid.Row="2"
+                               Text="Solicitudes de recojo"
+                       VerticalTextAlignment="Center"
+                       FontAttributes="Bold"
+                       FontSize="18"
+                       TextColor="Black"
+                       Margin="16,0,0,0"/>
+            <sombras:Shadows CornerRadius="10"  
+            Shades="{sombras:SingleShade Offset='-15, -10',
+                                    Opacity=0.1,
+                                    Color=Gray}"
+                             Grid.Row="3"
+                             IsVisible="{Binding Consolicitudes}">
+                <Frame Grid.Row="3"
+               CornerRadius="20" BackgroundColor="White"
+               Margin="15,0,15,0"
+               HasShadow="False">
+              <CollectionView x:Name="Listasolicitudes"
+                  BackgroundColor="White"
+                        Grid.Row="3"
+        ItemsSource="{Binding Listasolicitudes}"
+                              VerticalScrollBarVisibility="Always"
+                              sk:Skeleton.IsParent="True"
+	sk:Skeleton.IsBusy="{Binding IsBusy}"
+	sk:Skeleton.Animation="{sk:DefaultAnimation Fade}">
+                  
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical"
+                             Span="1"
+                             VerticalItemSpacing="20"/>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                           
+                                <Frame Grid.Row="2" Padding="2"
+               BackgroundColor="White" CornerRadius="15"
+               
+               HasShadow="False"
+                                       sk:Skeleton.IsBusy="{Binding IsBusy}"
+	sk:Skeleton.BackgroundColor="#1CFEC0"
+                                       sk:Skeleton.Animation="{sk:DefaultAnimation Fade}"
+                                       >
+                        <Grid RowDefinitions="*,10">
+                          
+                                        <StackLayout 
+                                            Orientation="Horizontal">
+                                            <StackLayout>
+                                                <Label Text="{Binding Nombrecliente}"
+                                                       FontAttributes="Bold"
+                                                       FontSize="16"
+                                                       sk:Skeleton.IsBusy="{Binding IsBusy}"
+	sk:Skeleton.BackgroundColor="Green"/>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Image Source="https://i.ibb.co/F5YDdV4/herramienta.png" WidthRequest="20"/>
+                                                    <Label Text="{Binding ubicacioncompleta}"
+                                                    VerticalTextAlignment="Center"
+                                                       TextColor="#313237"
+                                                       FontSize="12"
+                                                           FontAttributes="Bold"/>
+                                                </StackLayout>
+                                               
+                                                <Label Text="{Binding Fecha}"
+                                                    VerticalTextAlignment="Center"
+                                                       TextColor="#29CE69"
+                                                       FontSize="12"
+                                                       FontAttributes="Bold"/>
+                                                <Label Text="{Binding turno}"
+                                                    VerticalTextAlignment="Center"
+                                                       TextColor="#73DA8C"
+                                                       FontSize="12"
+                                                       FontAttributes="Bold"
+                                                       Margin="0,0,0,10"/>
+                                            </StackLayout>
+                                         
+                                            <Button Text="Asignar"
+                                                    BackgroundColor="#ECF8EC"
+                                                    CornerRadius="20"
+                                                    HorizontalOptions="EndAndExpand"
+                                                    Margin="0,0,0,10"
+                                                    TextColor="#29CE69"
+                                                    Command="{Binding Source={x:Reference Listasolicitudes}, Path=BindingContext.Navegarasignacionescommad}"
+                                               CommandParameter="{Binding .}"
+                                                    />
+                                        </StackLayout>
+                                    <Frame HeightRequest="1"
+                                           Padding="0"
+                                           VerticalOptions="End"
+                                           BackgroundColor="#29CE69"
+                                          HasShadow="False"/>
+
+                                      
+
+                                    </Grid>
+                    </Frame>
+                         
+                        </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+        </Frame>
+            </sombras:Shadows>
+            <StackLayout IsVisible="false" Grid.Row="3">
+                <Image Source="https://i.ibb.co/qBLVPQZ/relajarse.png"/>
+                <Label Text="Sin solicitudes"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"
+                       FontSize="40"
+                       CharacterSpacing="0"
+                       TextColor="#6A6A6A"/>
+            </StackLayout>
+
+        </Grid>
+     
+    </ScrollView>
+
+
+
+</ContentPage>

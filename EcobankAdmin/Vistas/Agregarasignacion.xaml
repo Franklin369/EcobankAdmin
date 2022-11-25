@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcobankAdmin.Vistas.Agregarasignacion"
+             NavigationPage.HasNavigationBar="False">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0,1">
+                <GradientStop x:Name="Gra1" Color="#D6F4E7"
+                                                  
+                          Offset="0.1" />
+                <GradientStop x:Name="Gra2" Color="#11ffbd"
+                          Offset="1.0" />
+            </LinearGradientBrush>
+            
+        </Grid.Background>
+        <ImageButton BackgroundColor="Transparent"
+                     Source="flecha.png"
+                     WidthRequest="30"
+                     VerticalOptions="Start"
+                     HorizontalOptions="Start"
+                     Margin="10,30,0,0"/>
+        <ScrollView>
+            <StackLayout Margin="10,60,10,0"
+                     >
+                <SearchBar x:Name="searchBar"
+                Placeholder="Identificación del recolector"
+                       SearchCommand="{Binding Buscarcommand}"
+                       Text="{Binding txtIdentificacionRecolec}"
+                       
+                      />
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Recolector:"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center"/>
+                    <Frame CornerRadius="15" Padding="10"
+                       BackgroundColor="#D0F2D8">
+                        <Label Text="{Binding txtNombrerecolector}"
+                       VerticalOptions="Center"
+                        TextColor="#00702B"
+                        TextTransform="None"
+                       FontSize="18"
+                       />
+                    </Frame>
+
+                </StackLayout>
+                <Button Text="Asignar"
+                    TextTransform="None"
+                    HorizontalOptions="Center"
+                    CornerRadius="15"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    BackgroundColor="White"
+                    Margin="0,20,0,0"
+                    Command="{Binding Insertarcommad}"/>
+            </StackLayout>
+        </ScrollView>
+      
+    </Grid>
+</ContentPage>

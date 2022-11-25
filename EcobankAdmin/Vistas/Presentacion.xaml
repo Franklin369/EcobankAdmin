@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:degradado="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="EcobankAdmin.Vistas.Presentacion">
+    <Grid>
+        <degradado:PancakeView BackgroundGradientStartPoint="0,1" BackgroundGradientEndPoint="0,0">
+
+
+            <degradado:PancakeView.BackgroundGradientStops>
+                <degradado:GradientStopCollection>
+                    <degradado:GradientStop Color="#82FCC1" Offset="0.0" />
+                    <degradado:GradientStop Color="#BFFF97" Offset="0.9" />
+                   
+                </degradado:GradientStopCollection>
+            </degradado:PancakeView.BackgroundGradientStops>
+
+            <StackLayout>
+                <Image Source="ecoban1"
+                   Margin="120,0,120,0"
+                   VerticalOptions="CenterAndExpand"/>
+                <Label Text="Hola" x:Name="lblusuario"/>
+
+            </StackLayout>
+            
+        </degradado:PancakeView>
+    </Grid>
+</ContentPage>

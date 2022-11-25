@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcobankAdmin.Vistas.Confi.AgregarProducto"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:sombras="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+             xmlns:degradado="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
+    <ContentPage.Content>
+        <ScrollView>
+              <Grid RowDefinitions="80,*">
+
+            <degradado:PancakeView BackgroundGradientStartPoint="0,1" BackgroundGradientEndPoint="0,0"
+                                       Grid.RowSpan="2">
+
+
+                <degradado:PancakeView.BackgroundGradientStops>
+                    <degradado:GradientStopCollection>
+                        <degradado:GradientStop Color="#82FCC1" Offset="0.9" />
+                        <degradado:GradientStop Color="#BFFF97" Offset="0.0" />
+
+                    </degradado:GradientStopCollection>
+                </degradado:PancakeView.BackgroundGradientStops>
+
+
+
+            </degradado:PancakeView>
+            <ImageButton Source="flecha.png"
+                   HeightRequest="22" BackgroundColor="Transparent"
+                   Margin="10,30,0,0" HorizontalOptions="Start"
+                              Command="{Binding Volvercomman}"/>
+            <ScrollView  Grid.Row="1">
+
+                <StackLayout Margin="10" IsVisible="{Binding Panelregistro}" x:Name="Panelregistro"
+                             Grid.Row="1">
+                    <sombras:Shadows CornerRadius="60"  
+            Shades="{sombras:SingleShade Offset='0, 10',
+                                    Opacity=0.5,
+                                    Color=#08C65B}">
+                        <Frame Padding="0"
+                           CornerRadius="15" >
+                            <Frame.Background>
+                                <LinearGradientBrush EndPoint="1,1">
+                                    <GradientStop x:Name="Gra1" Color="#1AD190"
+                                                  
+                          Offset="0.1" />
+                                    <GradientStop x:Name="Gra2" Color="#BFFF97"
+                          Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Frame.Background>
+                            <StackLayout x:Name="Panelnombres"
+                                     Margin="20">
+
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image Source="https://i.ibb.co/jLr5qZh/nombre-1.png"
+                                               HeightRequest="30"/>
+                                        <Label Text="Descripción:"
+                           FontSize="18"
+                           VerticalTextAlignment="Center"
+                               TextColor="White"
+                                               FontAttributes="Bold"/>
+                                    </StackLayout>
+
+                                        <Entry Text="{Binding txtDescripcion}"
+                           FontAttributes="Bold"
+                           HorizontalOptions="FillAndExpand"
+                          TextColor="White"
+                        FontSize="30"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image Source="https://i.ibb.co/17Qm9kB/identificacion.png"
+                                               HeightRequest="30"
+                                              />
+                                        <Label Text="P. Compra:"
+                           FontSize="18"
+                           VerticalTextAlignment="Center"
+                           
+                               TextColor="White"
+                                               FontAttributes="Bold"/>
+                                    </StackLayout>
+
+                                        <Entry Text="{Binding txtPreciocompra}"
+                          TextColor="White"
+                           HorizontalOptions="FillAndExpand"
+                            FontSize="30"
+                            TextTransform="Uppercase"
+                                       FontAttributes="Bold"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image Source="https://i.ibb.co/DrJZDyG/correo.png"
+                                               HeightRequest="30"/>
+                                        <Label Text="P. venta:"
+                       FontSize="18"
+                           VerticalTextAlignment="Center"
+                          TextColor="White"
+                                               FontAttributes="Bold"/>
+                                    </StackLayout>
+
+                                        <Entry FontSize="30" Text="{Binding txtPrecioventa}"
+                       HorizontalOptions="FillAndExpand"
+                    TextColor="White" FontAttributes="Bold"
+                                       IsEnabled="{Binding EstadoVisPass}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image Source="https://i.ibb.co/DrJZDyG/correo.png"
+                                               HeightRequest="30"/>
+                                        <Label Text="Und medida:"
+                       FontSize="18"
+                           VerticalTextAlignment="Center"
+                          TextColor="White"
+                                               FontAttributes="Bold"/>
+                                    </StackLayout>
+
+                                        <Entry FontSize="30" Text="{Binding txtUndmedida}"
+                       HorizontalOptions="FillAndExpand"
+                    TextColor="White" FontAttributes="Bold"
+                                       IsEnabled="{Binding EstadoVisPass}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image Source="https://i.ibb.co/DrJZDyG/correo.png"
+                                               HeightRequest="30"/>
+                                        <Label Text="Color:"
+                       FontSize="18"
+                           VerticalTextAlignment="Center"
+                          TextColor="White"
+                                               FontAttributes="Bold"/>
+                                    </StackLayout>
+
+                                        <Entry FontSize="30" Text="{Binding txtColor}"
+                       HorizontalOptions="FillAndExpand"
+                    TextColor="White" FontAttributes="Bold"
+                                       IsEnabled="{Binding EstadoVisPass}"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image Source="https://i.ibb.co/DrJZDyG/correo.png"
+                                               HeightRequest="30"/>
+                                        <Label Text="Foto:"
+                       FontSize="18"
+                           VerticalTextAlignment="Center"
+                          TextColor="White"
+                                               FontAttributes="Bold"/>
+                                    </StackLayout>
+
+                                        <Entry FontSize="30" Text="{Binding txtIcono}"
+                       HorizontalOptions="FillAndExpand"
+                    TextColor="White" FontAttributes="Bold"
+                                       IsEnabled="{Binding EstadoVisPass}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </sombras:Shadows>
+
+                  
+                    <Button  Text="Guardar"
+                    Command="{Binding InsertarProductcomman}"
+                    HorizontalOptions="Center"
+                    BackgroundColor="White"
+                     TextColor="Black"
+                             FontAttributes="Bold"
+                    CornerRadius="15"
+                     Margin="0,20,0,10"
+                   />
+                        <Image Source="https://i.ibb.co/10KhFXT/bote-de-basura.png"/>
+                </StackLayout>
+
+            </ScrollView>
+
+        </Grid>
+        </ScrollView>
+      
+    </ContentPage.Content>
+</ContentPage>

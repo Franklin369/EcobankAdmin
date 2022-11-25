@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             x:Class="EcobankAdmin.Vistas.Solicitarrecojo">
+   
+        <Frame CornerRadius="15"
+               Margin="30">
+           
+            <Frame.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                <GradientStop x:Name="Gra1" Color="#aaffa9"
+                                                  
+                          Offset="0.1" />
+                <GradientStop x:Name="Gra2" Color="#11ffbd"
+                          Offset="1.0" />
+                </LinearGradientBrush>
+            </Frame.Background>
+        <StackLayout>
+            <StackLayout VerticalOptions="Center" IsVisible="{Binding Registroinicio}">
+            <Image Source="https://i.ibb.co/pdCdwmP/arbol.png"
+                   HeightRequest="100"/>
+            <Label Text="Selecciona una fecha y horario para que uno de nuestros agentes de recojo vaya a tu domicilio"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                   HorizontalTextAlignment="Center"
+                   />
+            <DatePicker VerticalOptions="Center"
+                        HorizontalOptions="CenterAndExpand"
+                        FontAttributes="Bold"
+                        Date="{Binding DateTo}"
+                        MinimumDate="{Binding Horaactual}">
+                <DatePicker.Format>dd/MM/yyyy</DatePicker.Format>
+
+            </DatePicker>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
+                    <Label Text="Entre las" FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                       TextColor="#0B2117"
+                       VerticalOptions="Center"
+                       VerticalTextAlignment="Center"/>
+                    <Picker ItemsSource="{Binding ListViewSource}"
+                        ItemDisplayBinding="{Binding Turno}"
+                        SelectedItem="{Binding SelectTurno}"
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center"
+                        WidthRequest="170"/>
+
+                </StackLayout>
+                <Button Text="Confirmar solicitud"
+                    HorizontalOptions="Center"
+                    CornerRadius="15"
+                    VerticalOptions="Center"
+                    BackgroundColor="White"
+                    TextTransform="None"
+                    FontAttributes="Bold"
+                    TextColor="#077038"
+                    Command="{Binding AgregarSolicitudcomman}"/>
+                <Button Text="Volver"
+                        HorizontalOptions="Center"
+                        BackgroundColor="Transparent"/>
+
+
+            </StackLayout>
+            <StackLayout VerticalOptions="CenterAndExpand" IsVisible="{Binding Solicitudhecha}">
+                <Image Source="https://i.ibb.co/fYnd8hb/el-planeta-tierra.png"
+                       HeightRequest="200"
+                       VerticalOptions="Center"/>
+                <Label Text="Solicitud enviada !Gracias! por cuidar nuestro planeta Tierra"
+                       HorizontalTextAlignment="Center"
+                       FontSize="25"/>
+                <Button BackgroundColor="#60B6FF"   
+                        HeightRequest="5"
+                        CornerRadius="15"
+                        HorizontalOptions="Center"/>
+                <Button CornerRadius="15"
+                        HorizontalOptions="Center"
+                        Text="Aceptar"
+                        BackgroundColor="White"
+                        FontAttributes="Bold"
+                        Command="{Binding Volvercomman}"/>
+            </StackLayout>
+        </StackLayout>
+           
+            
+        </Frame>
+      
+
+</popup:PopupPage>

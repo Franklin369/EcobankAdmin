@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:degradado="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
+             xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             x:Class="EcobankAdmin.Vistas.Login"
+              xmlns:sombras="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+             NavigationPage.HasNavigationBar="False">
+    <Grid>
+        <degradado:PancakeView BackgroundGradientStartPoint="0,1" BackgroundGradientEndPoint="0,0">
+
+
+            <degradado:PancakeView.BackgroundGradientStops>
+                <degradado:GradientStopCollection>
+                    <degradado:GradientStop Color="#11ffbd" Offset="0.0" />
+                    <degradado:GradientStop Color="#D6F4E7" Offset="0.9" />
+                    <!--<degradado:GradientStop Color="#3D57AB" Offset="0.5" />-->
+                    <!--<yummy:GradientStop Color="#0000FF" Offset="1" />-->
+                </degradado:GradientStopCollection>
+            </degradado:PancakeView.BackgroundGradientStops>
+
+           
+
+        </degradado:PancakeView>
+        <StackLayout Orientation="Vertical" VerticalOptions="Center">
+            <StackLayout IsVisible="{Binding VisibleInicio}"
+                VerticalOptions="Center"
+                         >
+              
+                    <Image Source="https://i.ibb.co/kBVz0Rj/luz.png"
+                   VerticalOptions="Center"
+                   HeightRequest="200"/>
+             
+                <StackLayout Orientation ="Horizontal"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center">
+                <Image Source="https://i.ibb.co/VtQ7qhr/ecoban1.png"
+                       HeightRequest="60"/>
+
+                <Label Text="cobank"
+                   FontSize="50"
+                       FontAttributes="Bold"
+                   VerticalTextAlignment="Center"/>
+             </StackLayout>
+            <StackLayout Orientation ="Vertical"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="https://i.ibb.co/LJk5JW4/sobre-de-correo-electronico.png"
+                               HeightRequest="22"/>
+                        <Entry Placeholder="Correo"
+                               Text="{Binding Correotxt}"
+                    
+                       HorizontalTextAlignment="Start"
+                               WidthRequest="240"
+                       TextColor="#00935A"
+                       FontAttributes="Bold"
+                      />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="https://i.ibb.co/ZmDSK84/bloquear.png"
+                               HeightRequest="22"/>
+                        <Entry Placeholder="Contraseña" IsPassword="True"
+                               Text="{Binding Passtxt}"
+                      
+                       HorizontalTextAlignment="Start"
+                               HorizontalOptions="FillAndExpand"
+                       TextColor="#00935A"
+                       FontAttributes="Bold"
+                      />
+                    </StackLayout>
+                    <Button Text="Acceder"
+                        TextTransform="None"
+                        BackgroundColor="#D6F4E7"
+                        CornerRadius="20"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        TextColor="#0EA980"
+                        Command="{Binding Logincommand}"
+                          
+                        />
+
+            </StackLayout>
+            </StackLayout>
+          
+            <!--<Image Source="https://i.ibb.co/wKc6FVz/carga-inalambrica.png" VerticalOptions="CenterAndExpand"
+                   Margin="15"
+                   IsVisible="{Binding VisibleFinal}"/>-->
+            <lottie:AnimationView  
+                                 Animation="reciclaload.json"
+                                 AutoPlay="True"
+                                 HeightRequest="250"
+                                 WidthRequest="300"
+                                 RepeatMode="Infinite"
+                                 VerticalOptions="Center"
+                                 IsVisible="{Binding VisibleFinal}"
+                             />
+            <StackLayout IsVisible="{Binding Sininternetv}">
+                  <lottie:AnimationView 
+                                 Animation="sininternet.json"
+                                 AutoPlay="True"
+                                 HeightRequest="250"
+                                 WidthRequest="300"
+                                 RepeatMode="Infinite"
+                                 VerticalOptions="Center"
+                                 
+                             />
+                <Label Text="Sin internet"
+                       FontSize="30"
+                       VerticalOptions="Center"
+                       VerticalTextAlignment="Center"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                      FontAttributes="Bold"/>
+                <Button Text="Volver a intentarlo"
+                        HorizontalOptions="Center"
+                        CornerRadius="15"
+                        BackgroundColor="#27E58F"
+                        FontAttributes="Bold"
+                        TextColor="White"/>
+            </StackLayout>
+          
+
+        </StackLayout>
+      
+      
+    </Grid>
+</ContentPage>

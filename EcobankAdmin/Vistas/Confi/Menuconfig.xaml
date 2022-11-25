@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcobankAdmin.Vistas.Confi.Menuconfig"
+             NavigationPage.HasNavigationBar="False">
+    <Grid RowDefinitions="70,*">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="1,0">
+                <GradientStop x:Name="Gra1" Color="#11ffbd"
+                                                  
+                          Offset="0.1" /> 
+                <GradientStop x:Name="Gra2" Color="#D6F4E7"
+                          Offset="1.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <ImageButton Source="flecha.png"
+               HorizontalOptions="Start"
+              Margin="10,40,0,0"
+                     BackgroundColor="Transparent"
+                     Command="{Binding Volvercommand}"/>
+        <ScrollView  Grid.Row="1">
+              <Grid VerticalOptions="Center" Margin="20,20,20,20"
+            RowDefinitions="230,230,230" ColumnDefinitions="*,*">
+            <Frame CornerRadius="15"
+                   BackgroundColor="White"
+                   HasShadow="False">
+                <StackLayout >
+                <Frame CornerRadius="100"
+                       BackgroundColor="#D0F2D8"
+                       HasShadow="False">
+                            <Frame CornerRadius="100" Padding="0"
+                                   BackgroundColor="#A1E6B2"
+                                   HasShadow="False">
+                                 <Image Source="https://i.ibb.co/D8KpRTn/camion-de-la-basura-2.png"
+                             Margin="15"/>
+                            </Frame>
+                           
+                </Frame>
+              
+                <Label Text="Recolectores"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="CenterAndExpand"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="#29CE69"/>
+                 </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Listarepartcommand}"/>
+                    </Frame.GestureRecognizers>
+            </Frame>
+            <Frame CornerRadius="15" Grid.Column="1"
+                   BackgroundColor="White"
+                   HasShadow="False">
+                <StackLayout >
+                        <Frame CornerRadius="100"
+                       BackgroundColor="#D0F2D8"
+                       HasShadow="False">
+                            <Frame CornerRadius="100" Padding="0"
+                                   BackgroundColor="#A1E6B2"
+                                   HasShadow="False">
+                                <Image Source="https://i.ibb.co/kBVz0Rj/luz.png"
+                             Margin="15"/>
+                            </Frame>
+
+                        </Frame>
+
+                        <Label Text="Productos"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="CenterAndExpand"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="#29CE69"/>
+                </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Listaproductoscommand}"/>
+                    </Frame.GestureRecognizers>
+            </Frame>
+            <Frame CornerRadius="15" Grid.Column="0" Grid.Row="1"
+                   BackgroundColor="White"
+                   HasShadow="False">
+                <StackLayout >
+                        <Frame CornerRadius="100"
+                       BackgroundColor="#D0F2D8"
+                       HasShadow="False">
+                            <Frame CornerRadius="100" Padding="0"
+                                   BackgroundColor="#A1E6B2"
+                                   HasShadow="False">
+                                <Image Source="https://i.ibb.co/8z3tZxn/de-origen-local-1.png"
+                             Margin="15"/>
+                            </Frame>
+
+                        </Frame>
+
+                        <Label Text="Zonas"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="CenterAndExpand"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="#29CE69"/>
+                </StackLayout>
+            </Frame>
+            <Frame CornerRadius="15" Grid.Column="1" Grid.Row="1"
+                   BackgroundColor="White"
+                   HasShadow="False">
+                <StackLayout >
+                        <Frame CornerRadius="100"
+                       BackgroundColor="#D0F2D8"
+                       HasShadow="False">
+                            <Frame CornerRadius="100" Padding="0"
+                                   BackgroundColor="#A1E6B2"
+                                   HasShadow="False">
+                                <Image Source="https://i.ibb.co/HtBFkRL/reloj-de-bolsillo.png"
+                             Margin="15"/>
+                            </Frame>
+
+                        </Frame>
+
+                        <Label Text="Horarios recojo"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="CenterAndExpand"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="#29CE69"/>
+                </StackLayout>
+            </Frame>
+            <Frame CornerRadius="15" Grid.Column="0" Grid.Row="2"
+                   BackgroundColor="White"
+                   HasShadow="False">
+                <StackLayout >
+                        <Frame CornerRadius="100"
+                       BackgroundColor="#D0F2D8"
+                       HasShadow="False">
+                            <Frame CornerRadius="100" Padding="0"
+                                   BackgroundColor="#A1E6B2"
+                                   HasShadow="False">
+                                <Image Source="https://i.ibb.co/PjPCzhN/hogar-ecologico.png"
+                             Margin="25"/>
+                            </Frame>
+
+                        </Frame>
+
+                        <Label Text="Clientes"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="CenterAndExpand"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="#29CE69"/>
+                </StackLayout>
+            </Frame>
+              
+            </Grid>
+        </ScrollView>
+      
+    </Grid>
+</ContentPage>

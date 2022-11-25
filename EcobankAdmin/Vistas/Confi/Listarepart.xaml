@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcobankAdmin.Vistas.Confi.Listarepart"
+             NavigationPage.HasNavigationBar="False">
+    <Grid>
+       
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0,1">
+                <GradientStop x:Name="Gra1" Color="#D6F4E7"
+                                                  
+                          Offset="0.1" />
+                <GradientStop x:Name="Gra2" Color="#11ffbd"
+                          Offset="1.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <ImageButton Source="flecha.png" HorizontalOptions="Start"
+               VerticalOptions="Start"
+               HeightRequest="30"
+               Margin="10,35,0,0"
+               BackgroundColor="Transparent"
+                     Command="{Binding Volvercommand}"/>
+        <Grid RowDefinitions="50,*" Margin="10,90,10,0">
+            <Button Text="Agregar" HorizontalOptions="Start" 
+                    CornerRadius="15"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    Command="{Binding AgregarRepartcommand}"/>
+            <CollectionView Grid.Row="1" Margin="0,20,0,0"
+                ItemsSource="{Binding Listarecolectores}"
+                            x:Name="ListaRecolec">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Span="1"
+                                     Orientation="Vertical"
+                                     VerticalItemSpacing="15"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        
+                        <SwipeView >
+                            <SwipeView.RightItems
+                               >
+                                <SwipeItems Mode="Reveal">
+                                    <SwipeItem Text="EliminarPRU" 
+                                                Command="{Binding Source={x:Reference ListaRecolec}, Path=BindingContext.Eliminarcommand}"
+                                               CommandParameter="{Binding .}"
+                                                IsVisible="{Binding VisibleElimEdit}"/>
+                                    <SwipeItem Text="EditarPRU"
+                                               IsVisible="{Binding VisibleElimEdit}"
+                                               Command="{Binding Source={x:Reference ListaRecolec}, Path=BindingContext.Editarcommand}"
+                                               CommandParameter="{Binding .}"/>
+                                    <SwipeItem Text="Activar"
+                                               IsVisible="{Binding VisibleEstado}"
+                                               Command="{Binding Source={x:Reference ListaRecolec}, Path=BindingContext.Activarcommand}"
+                                               CommandParameter="{Binding .}"/>
+
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+                          
+                            <Frame CornerRadius="15"
+                                   BackgroundColor="White"
+                                   HasShadow="False">
+                                  <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Nombre}"
+                                   FontSize="20"/>
+                            <Label Text="{Binding Identificacion}"
+                                    FontSize="20"/>
+                                <Frame Padding="5" CornerRadius="10"
+                                       BackgroundColor="{Binding Color}"
+                                       HorizontalOptions="EndAndExpand"
+                                       HasShadow="False">
+                                     <Label Text="{Binding Estado}"
+                                    FontSize="15"
+                                            FontAttributes="Bold"
+                                            TextColor="{Binding Colorletraestado}"
+                                   />
+                                </Frame>
+                           
+                        </StackLayout>
+                            <Frame HeightRequest="1"
+                                   VerticalOptions="Center"
+                                   Padding="0"
+                                   HasShadow="False"/>
+                        </StackLayout>
+                            </Frame>
+                           
+                        </SwipeView>
+                           
+                       
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </Grid>
+</ContentPage>

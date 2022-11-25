@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcobankAdmin.Vistas.Detallereciclado"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Black">
+            <ImageButton Source="https://i.ibb.co/C9sV3ZM/hacia-atras-1.png"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="StartAndExpand" 
+                  HeightRequest="30"
+                   Margin="10,30,0,0"
+                         BackgroundColor="Transparent"
+                         Command="{Binding Volvercomman}"/>
+            <CollectionView x:Name="ListaMovimientos"
+                         Margin="10,0,10,0"
+                        ItemsSource="{Binding ListViewSource}"
+                        >
+
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout VerticalItemSpacing="20"
+                                 HorizontalItemSpacing="20"
+                                 Span="1"
+                                 Orientation="Vertical"
+                                 />
+
+                </CollectionView.ItemsLayout>
+                <CollectionView.Header>
+                    <Grid  Margin="0,5,0,0"
+                      VerticalOptions="Center">
+                        <Label Text="Acumulado"
+                       TextColor="White"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                           VerticalTextAlignment="End"
+                           VerticalOptions="End"/>
+                    </Grid>
+
+                </CollectionView.Header>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid RowDefinitions="*,30,1" ColumnDefinitions="50,*"
+                         >
+                            <Image Source="{Binding ProducIcono}"
+                                   Grid.RowSpan="3"/>
+                            <StackLayout Orientation="Horizontal"
+                                Grid.Column="1" VerticalOptions="Center">
+                                <StackLayout Orientation="Vertical"
+                                   >
+                                    <Label Text="{Binding Producto}"
+                                   TextColor="{Binding Color}"
+                                   FontAttributes="Bold"
+                                   FontSize="18"/>
+                                    <Label Text="{Binding Preciocompra}"
+                                   TextColor="#798683"
+                                   />
+
+                                </StackLayout>
+
+                                <Label Text="{Binding Total}"
+                               TextColor="White"
+                               VerticalTextAlignment="Center"
+                                       VerticalOptions="Center"
+                               HorizontalOptions="EndAndExpand"
+                               FontAttributes="Bold"
+                               FontSize="20"/>
+
+                            </StackLayout>
+                          
+                            <Label Text="{Binding fecha}"
+               TextColor="White"
+               Grid.Row="1"
+               Grid.Column="1"/>
+                            <BoxView BackgroundColor="#3F3F3F"
+                                 Grid.Row="2" Margin="0,0.5,0,0"
+                                 Grid.Column="1"/>
+
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
